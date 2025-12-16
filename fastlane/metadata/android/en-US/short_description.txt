@@ -1,0 +1,1 @@
+A simple utility to force "NR Only" 5G network mode.
