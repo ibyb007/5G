@@ -1,3 +1,6 @@
+import java.util.Properties
+import java.io.FileInputStream
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -9,6 +12,23 @@ android {
     namespace = "com.openappslabs.fiveg"
     compileSdk {
         version = release(36)
+    }
+
+    signingConfigs {
+        create("release") {
+            val localPropertiesFile = rootProject.file("local.properties")
+            if (localPropertiesFile.exists()) {
+                val properties = Properties()
+                properties.load(FileInputStream(localPropertiesFile))
+                val keyPath = properties.getProperty("storeFile")
+                if (keyPath != null) {
+                    storeFile = file(keyPath)
+                    storePassword = properties.getProperty("FIVEG_KEYSTORE_PASSWORD")
+                    keyAlias = properties.getProperty("FIVEG_KEY_ALIAS")
+                    keyPassword = properties.getProperty("FIVEG_KEY_PASSWORD")
+                }
+            }
+        }
     }
 
     defaultConfig {
@@ -23,11 +43,15 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            // Use the signing config when local.properties exists
+            if (rootProject.file("local.properties").exists()) {
+                signingConfig = signingConfigs.getByName("release")
+            }
         }
     }
     compileOptions {
@@ -39,6 +63,12 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig  = true
+    }
+
+    dependenciesInfo {
+        includeInApk = false
+        includeInBundle = false
     }
 }
 
