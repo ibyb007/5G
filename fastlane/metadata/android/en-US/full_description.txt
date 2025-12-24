@@ -3,9 +3,11 @@ Unlock the full potential of your 5G device with this simple utility. This app a
 Most devices automatically switch between 5G, 4G, and 3G to save battery or maintain signal. However, this can be annoying if you are in an area with 5G coverage but your phone keeps dropping back to slower LTE speeds. This app helps you lock the connection to 5G.
 
 <b>Features:</b>
+
 - One-tap access to network settings.
 - Force "NR Only" to stay on 5G.
 - Lightweight and no ads.
 
 <b>Important Note:</b>
+
 Forcing "NR Only" may prevent you from making or receiving calls if your carrier does not support VoNR (Voice over New Radio) or if you are in an area without standalone 5G coverage. Use with caution and switch back to default settings if you experience connectivity issues.
