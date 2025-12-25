@@ -24,16 +24,16 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.openappslabs.fiveg.utils.RadioInfo
 import com.openappslabs.fiveg.R
+import com.openappslabs.fiveg.utils.RadioInfo
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -41,6 +41,10 @@ fun HomeScreen(
     onAboutClick: () -> Unit = {}
 ) {
     val context = LocalContext.current
+
+    val onOpenSettingsClick = remember(context) {
+        { RadioInfo.openRadioInfo(context) }
+    }
 
     Scaffold(
         topBar = {
@@ -71,7 +75,7 @@ fun HomeScreen(
                     .padding(16.dp)
             ) {
                 Button(
-                    onClick = { RadioInfo.openRadioInfo(context) },
+                    onClick = onOpenSettingsClick,
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(56.dp),
@@ -173,9 +177,13 @@ fun HomeScreen(
 }
 
 @Composable
-fun StepItem(number: String, text: String) {
+private fun StepItem(
+    number: String, 
+    text: String,
+    modifier: Modifier = Modifier
+) {
     Row(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
             .padding(vertical = 4.dp),
         verticalAlignment = Alignment.Top
@@ -192,43 +200,5 @@ fun StepItem(number: String, text: String) {
             style = MaterialTheme.typography.bodyMedium,
             color = MaterialTheme.colorScheme.onSurfaceVariant
         )
-    }
-}
-
-@Composable
-fun FeatureCard(
-    title: String,
-    description: String,
-    icon: ImageVector,
-    onClick: () -> Unit
-) {
-    Card(
-        onClick = onClick,
-        modifier = Modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surfaceContainerHigh
-        )
-    ) {
-        Column(
-            modifier = Modifier.padding(16.dp)
-        ) {
-            Icon(
-                imageVector = icon,
-                contentDescription = null,
-                tint = MaterialTheme.colorScheme.primary
-            )
-            Spacer(modifier = Modifier.height(12.dp))
-            Text(
-                text = title,
-                style = MaterialTheme.typography.titleLarge,
-                fontWeight = FontWeight.Medium
-            )
-            Spacer(modifier = Modifier.height(8.dp))
-            Text(
-                text = description,
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant
-            )
-        }
     }
 }

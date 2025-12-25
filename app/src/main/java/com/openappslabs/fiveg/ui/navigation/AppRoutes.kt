@@ -2,10 +2,10 @@ package com.openappslabs.fiveg.ui.navigation
 
 import kotlinx.serialization.Serializable
 
-sealed class AppRoutes {
+sealed interface Screen {
     @Serializable
-    data object HomeScreen : AppRoutes()
+    data object Home : Screen
     
     @Serializable
-    data object AboutScreen : AppRoutes()
+    data object About : Screen
 }
