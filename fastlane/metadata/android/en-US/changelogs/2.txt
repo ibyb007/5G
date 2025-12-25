@@ -1,0 +1,7 @@
+### 1.1.0
+
+**Changes**
+- Improved navigation structure
+- Updated About screen UI and app icon
+- Improved handling of radio information intents
+- Code cleanup and refactoring
