@@ -12,8 +12,19 @@
 
 Get the latest version of **5G**:
 
-[![Get it on GitHub](https://img.shields.io/badge/Get%20it%20on-GitHub-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/OpenAppsLabs/5G/releases/latest)
-[![Download APK](https://img.shields.io/badge/Download-APK-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://github.com/OpenAppsLabs/5G/releases/latest/download/app-release.apk)
+<p align="center">
+  <a href="https://github.com/OpenAppsLabs/5G/releases/latest/download/app-release.apk">
+    <img src="https://raw.githubusercontent.com/vadret/android/master/assets/get-github.png" alt="Get it on OpenAPK" height="100"/>
+  </a>
+  <a href="https://apt.izzysoft.de/fdroid/index/apk/com.openappslabs.fiveg">
+    <img src="https://gitlab.com/IzzyOnDroid/repo/-/raw/master/assets/IzzyOnDroid.png" alt="Get it on IzzyOnDroid" height="100"/>
+  </a>
+  <a href="https://www.openapk.net/5g/com.openappslabs.fiveg/">
+    <img src="https://www.openapk.net/images/openapk-badge.png" alt="Get it on OpenAPK" height="100"/>
+  </a>
+</p>
+
+> ⚠️ This app is not available on the Google Play Store — use the links above to download the APK.
 
 ---
 
