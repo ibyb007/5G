@@ -19,6 +19,7 @@ Get the latest version of **5G**:
   <a href="https://apt.izzysoft.de/fdroid/index/apk/com.openappslabs.fiveg">
     <img src="assets/badges/get-it-on-izzyondroid.png" alt="Get it on IzzyOnDroid" height="100"/>
   </a>
+<br>
   <a href="https://www.openapk.net/5g/com.openappslabs.fiveg/">
     <img src="assets/badges/get-it-on-openapk.png" alt="Get it on OpenAPK" height="100"/>
   </a>
