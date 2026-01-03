@@ -40,6 +40,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import com.openappslabs.fiveg.R
 import java.time.Year
 import com.openappslabs.fiveg.BuildConfig
@@ -47,7 +48,7 @@ import com.openappslabs.fiveg.BuildConfig
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AboutScreen(
-    onBackClick: () -> Unit,
+    navController: NavHostController,
 ) {
     val uriHandler = LocalUriHandler.current
 
@@ -76,7 +77,7 @@ fun AboutScreen(
                 },
                 navigationIcon = {
                     Surface(
-                        onClick = onBackClick,
+                        onClick = { navController.popBackStack() },
                         shape = CircleShape,
                         color = MaterialTheme.colorScheme.surfaceContainer,
                         modifier = Modifier
