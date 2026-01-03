@@ -14,13 +14,16 @@ Get the latest version of **5G**:
 
 <p align="center">
   <a href="https://github.com/OpenAppsLabs/5G/releases/latest/download/app-release.apk">
-    <img src="https://raw.githubusercontent.com/vadret/android/master/assets/get-github.png" alt="Get it on OpenAPK" height="100"/>
+    <img src="assets/badges/get-it-on-github.png" alt="Get it on GitHub" height="100"/>
   </a>
   <a href="https://apt.izzysoft.de/fdroid/index/apk/com.openappslabs.fiveg">
-    <img src="https://gitlab.com/IzzyOnDroid/repo/-/raw/master/assets/IzzyOnDroid.png" alt="Get it on IzzyOnDroid" height="100"/>
+    <img src="assets/badges/get-it-on-izzyondroid.png" alt="Get it on IzzyOnDroid" height="100"/>
   </a>
   <a href="https://www.openapk.net/5g/com.openappslabs.fiveg/">
-    <img src="https://www.openapk.net/images/openapk-badge.png" alt="Get it on OpenAPK" height="100"/>
+    <img src="assets/badges/get-it-on-openapk.png" alt="Get it on OpenAPK" height="100"/>
+  </a>
+  <a href="https://apps.obtainium.imranr.dev/redirect?r=obtainium://add/https://github.com/OpenAppsLabs/5G">
+    <img src="assets/badges/get-it-on-obtainium.png" alt="Get it on Obtainium" height="100"/>
   </a>
 </p>
 
