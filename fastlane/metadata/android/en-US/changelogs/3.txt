@@ -1,0 +1,14 @@
+### 1.1.1
+
+**New features:**
+- Added monochrome adaptive icon support
+
+**Fixes:**
+- Fixed "Open 5G settings" button overlapping with 3-button navigation bar
+
+**Changes:**
+- Code cleanup
+- Optimized navigation
+
+**Optimizations:**
+- Reduced APK size through resource shrinking
