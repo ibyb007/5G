@@ -1,10 +1,11 @@
-<h1 align="center">📶 5G</h1>
+<h1 align="center">5G</h1>
 
-**Force NR Mode**
+5G is a modern, open-source Android network monitoring app built with Jetpack Compose and Material Design 3. It offers fast, simple, and privacy-focused access to real-time 5G/NR signal info and key network settings.
 
-5G is a modern, open-source Android network monitoring application built with Jetpack Compose and Material Design 3. It focuses on speed, simplicity, and privacy, offering real-time 5G/NR signal information and quick access to system network settings.
-
-> **Disclaimer:** Hidden radio information (*#*#4636#*#*) may not be accessible on carrier-locked devices, custom ROMs, or OEM-restricted firmware (Samsung Knox, MIUI, etc.). This app cannot enable 5G on unsupported hardware.
+> **From my point of view, this app is complete in terms of features, and there’s nothing left to add.**  
+> Going forward, I will focus only on adding OEM-specific enhancements and addressing device-specific issues.  
+> That said, you’re still welcome to **raise issues or request features** if you think of any.
+> **Disclaimer:** Hidden radio information (##4636##) may not be accessible on carrier-locked devices, custom ROMs, or OEM-restricted firmware (e.g., Samsung Knox, MIUI). This app cannot enable 5G on unsupported hardware.
 
 ---
 
@@ -28,45 +29,37 @@ Get the latest version of **5G**:
   </a>
 </p>
 
-> ⚠️ This app is not available on the Google Play Store — use the links above to download the APK.
-
 ---
 
 ## 📱 Screenshots
 
 <p align="center">
-  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" width="30%" />
-  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/2.png" width="30%" />
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" width="45%" style="margin:10px;" />
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/2.png" width="45%" style="margin:10px;" />
+</p>
+<p align="center">
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/3.png" width="45%" style="margin:10px;" />
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/4.png" width="45%" style="margin:10px;" />
 </p>
 
 ---
 
 ## ✨ Features
 
-* **Material You Design:** Fully compatible with Material 3 dynamic theming.  
-* **Real-time Network Status:** Monitor LTE/5G(NR) connection state and signal info.  
-* **Quick System Access:** Direct shortcuts to network/telephony settings.  
-* **Lightweight:** Minimal footprint, instant startup.  
-* **No Ads/Trackers:** 100% privacy-focused.
-
----
-
-## 🤝 Contributing
-
-I welcome contributions! To keep the project organized and maintainable, please follow these guidelines:
-
-1. **Fork the repository** and create a branch.
-2. **Work on a single feature or fix per branch/PR.** Avoid mixing multiple features or unrelated changes in one Pull Request.
-3. **Write clear commit messages.**
-4. **Ensure code quality:** Follow Kotlin coding conventions and Compose best practices.
-5. **Test your changes locally** before submitting.
-6. **Open a Pull Request** against the main branch of this repository. Include a description of your changes and any relevant screenshots or notes.
+- **Material You Design:** Fully compatible with Material 3 dynamic theming, Supports adaptive icon.
+- **Real-time Network Status:** Monitor LTE/5G(NR) connection state and signal info.
+- **Quick System Access:** Direct shortcuts to network/telephony settings.
+- **Lightweight:** Instant startup.
+- **No Ads/Trackers:** 100% privacy-focused.
 
 ---
 
 ## 🐛 Bug Reporting
 
-If you encounter any bugs, issues, or unexpected behavior while using 5G, please feel free to [open an issue](https://github.com/OpenAppsLabs/5G/issues) on this repository.  
+> Some devices may encounter an issue where nothing happens when you click "Open 5G Settings." This can be caused by differences in location or the settings name for accessing hidden radio information.
+> If you experience this issue, please report it for your specific device or operating system.
+
+If you encounter any bugs, issues, or unexpected behavior while using 5G, please feel free to [open an issue](https://github.com/OpenAppsLabs/5G/issues) on this repository.
 
 When reporting a bug, please include:
 
@@ -76,7 +69,7 @@ When reporting a bug, please include:
 - Device/Android version
 - Screenshots (if applicable)
 
-This helps me fix problems faster and improve the app for everyone. I welcome all constructive feedback and suggestions. This app is still in progress.
+This helps me fix problems faster and improve the app for everyone. I welcome all constructive feedback and suggestions.
 
 If you find 5G useful, please consider ⭐ starring the repository to help others discover it.
 
@@ -85,8 +78,3 @@ If you find 5G useful, please consider ⭐ starring the repository to help other
 ## 📄 License
 
 5G is licensed under the [GNU GPL v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html).
-
----
-
-## Stargazers over time
-[![Stargazers over time](https://starchart.cc/OpenAppsLabs/5G.svg?variant=adaptive)](https://starchart.cc/OpenAppsLabs/5G)
