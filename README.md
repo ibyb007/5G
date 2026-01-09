@@ -14,6 +14,19 @@
 Get the latest version of **5G**:
 
 <p align="center">
+  <a href="https://play.google.com/store/apps/details?id=com.openappslabs.fiveg">
+    <img src="assets/badges/get-it-on-playstore.png" alt="Get it on Playstore" height="100"/>
+  </a>
+</p>
+
+<p align="center">
+  <strong>Google Play (Closed Testing)</strong> To install via Play Store:
+  <br>
+  <a href="https://play.google.com/apps/testing/com.openappslabs.fiveg"><strong>Join the tester program (Web)</strong></a> &nbsp;&nbsp;
+  <a href="https://play.google.com/store/apps/details?id=com.openappslabs.fiveg"><strong>Open in Play Store (Android)</strong></a>
+</p>
+
+<p align="center">
   <a href="https://github.com/OpenAppsLabs/5G/releases/latest/download/app-release.apk">
     <img src="assets/badges/get-it-on-github.png" alt="Get it on GitHub" height="100"/>
   </a>
