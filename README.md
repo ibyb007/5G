@@ -24,6 +24,8 @@ Get the latest version of **5G**:
   <br>
   <a href="https://play.google.com/apps/testing/com.openappslabs.fiveg"><strong>Join the tester program (Web)</strong></a> &nbsp;&nbsp;
   <a href="https://play.google.com/store/apps/details?id=com.openappslabs.fiveg"><strong>Open in Play Store (Android)</strong></a>
+  <br>
+  In case you're unable to join in, please raise issue with your email so I can add you in list. 
 </p>
 
 <p align="center">
