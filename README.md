@@ -1,10 +1,15 @@
 <h1 align="center">5G</h1>
 
+<p align="center">
+    <img src="assets/images/hero-image.png" alt="Hero Banner"/>
+</p>
+
 5G is a modern, open-source Android network monitoring app built with Jetpack Compose and Material Design 3. It offers fast, simple, and privacy-focused access to real-time 5G/NR signal info and key network settings.
 
 > **From my point of view, this app is complete in terms of features, and there’s nothing left to add.**  
 > Going forward, I will focus only on adding OEM-specific enhancements and addressing device-specific issues.  
 > That said, you’re still welcome to **raise issues or request features** if you think of any.
+
 > **Disclaimer:** Hidden radio information (##4636##) may not be accessible on carrier-locked devices, custom ROMs, or OEM-restricted firmware (e.g., Samsung Knox, MIUI). This app cannot enable 5G on unsupported hardware.
 
 ---
@@ -62,7 +67,6 @@ Get the latest version of **5G**:
 ## ✨ Features
 
 - **Material You Design:** Fully compatible with Material 3 dynamic theming, Supports adaptive icon.
-- **Real-time Network Status:** Monitor LTE/5G(NR) connection state and signal info.
 - **Quick System Access:** Direct shortcuts to network/telephony settings.
 - **Lightweight:** Instant startup.
 - **No Ads/Trackers:** 100% privacy-focused.
