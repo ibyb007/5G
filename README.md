@@ -4,6 +4,14 @@
     <img src="assets/images/hero-image.png" alt="Hero Banner"/>
 </p>
 
+<p align="center">
+  <img src="https://img.shields.io/github/v/release/OpenAppsLabs/5G?style=for-the-badge&logo=GitHub&color=%23000000"/>
+  <img src="https://img.shields.io/github/downloads/OpenAppsLabs/5G/total?style=for-the-badge&logo=GitHub&color=%23000000"/>
+  <img src="https://img.shields.io/github/stars/OpenAppsLabs/5G?style=for-the-badge&logo=GitHub&color=%23000000"/>
+  <img src="https://img.shields.io/github/forks/OpenAppsLabs/5G?style=for-the-badge&logo=GitHub&color=%23000000"/>
+  <img src="https://img.shields.io/github/license/OpenAppsLabs/5G?style=for-the-badge&logo=GitHub&color=%23000000"/>
+</p>
+
 5G is a modern, open-source Android network monitoring app built with Jetpack Compose and Material Design 3. It offers fast, simple, and privacy-focused access to real-time 5G/NR signal info and key network settings.
 
 > **From my point of view, this app is complete in terms of features, and there’s nothing left to add.**  
