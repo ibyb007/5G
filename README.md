@@ -91,8 +91,6 @@ If you encounter any bugs, issues, or unexpected behavior while using 5G, please
 When reporting a bug, please include:
 
 - Steps to reproduce the issue
-- Expected behavior
-- Actual behavior
 - Device/Android version
 - Screenshots (if applicable)
 
