@@ -9,8 +9,10 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
@@ -18,10 +20,10 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.FilledTonalIconButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
@@ -32,15 +34,13 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavHostController
 import com.openappslabs.fiveg.R
-import com.openappslabs.fiveg.ui.navigation.Screen
 import com.openappslabs.fiveg.utils.RadioInfo
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
-    navController: NavHostController
+    onAboutClick: () -> Unit,
 ) {
     val context = LocalContext.current
 
@@ -53,18 +53,29 @@ fun HomeScreen(
                     Text(
                         text = "5G",
                         style = MaterialTheme.typography.headlineMedium,
-                        fontWeight = FontWeight.Light
+                        fontWeight = FontWeight.ExtraBold,
+                        fontSize = 24.sp,
+                        letterSpacing = (-0.5).sp
                     )
                 },
                 actions = {
-                    FilledTonalIconButton(onClick = { navController.navigate(Screen.About) }) {
-                        Icon(
-                            painter = painterResource(id = R.drawable.info),
-                            contentDescription = "About",
-                            tint = MaterialTheme.colorScheme.onSurfaceVariant
-                        )
+                    Surface(
+                        onClick = onAboutClick,
+                        shape = CircleShape,
+                        color = MaterialTheme.colorScheme.surfaceContainer,
+                        modifier = Modifier
+                            .padding(start = 12.dp, end = 12.dp)
+                            .size(48.dp)
+                    ) {
+                        Box(contentAlignment = Alignment.Center) {
+                            Icon(
+                                painter = painterResource(id = R.drawable.info),
+                                contentDescription = "About",
+                                tint = MaterialTheme.colorScheme.onSurface,
+                                modifier = Modifier.size(24.dp)
+                            )
+                        }
                     }
-                    Spacer(modifier = Modifier.width(8.dp))
                 }
             )
         },
@@ -103,8 +114,6 @@ fun HomeScreen(
                 .verticalScroll(rememberScrollState()),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Spacer(modifier = Modifier.height(4.dp))
-
             Card(
                 modifier = Modifier.fillMaxWidth(),
                 colors = CardDefaults.cardColors(
@@ -123,8 +132,8 @@ fun HomeScreen(
                         Spacer(modifier = Modifier.width(12.dp))
                         Text(
                             text = "Steps to Enable 5G",
-                            style = MaterialTheme.typography.titleLarge,
-                            fontWeight = FontWeight.Medium
+                            style = MaterialTheme.typography.titleMedium,
+                            fontWeight = FontWeight.SemiBold
                         )
                     }
                     Spacer(modifier = Modifier.height(8.dp))
@@ -156,8 +165,8 @@ fun HomeScreen(
                         Spacer(modifier = Modifier.width(12.dp))
                         Text(
                             text = "Important Note",
-                            style = MaterialTheme.typography.titleLarge,
-                            fontWeight = FontWeight.Medium,
+                            style = MaterialTheme.typography.titleMedium,
+                            fontWeight = FontWeight.SemiBold,
                             color = MaterialTheme.colorScheme.onErrorContainer
                         )
                     }
