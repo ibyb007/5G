@@ -1,0 +1,4 @@
+### 1.2.0
+
+**Changes:**
+- Minor UI UX revamp
