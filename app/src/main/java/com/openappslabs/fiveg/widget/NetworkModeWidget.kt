@@ -36,6 +36,7 @@ class NetworkModeWidget : GlanceAppWidget() {
                         text = "NR Only",
                         modifier = GlanceModifier.padding(4.dp).weight(1f),
                         onClick = actionSendBroadcast(
+                            context,
                             NetworkModeBroadcastReceiver.getIntent(context, NetworkModeBroadcastReceiver.ACTION_NR_ONLY)
                         )
                     )
@@ -44,6 +45,7 @@ class NetworkModeWidget : GlanceAppWidget() {
                         text = "NR/LTE",
                         modifier = GlanceModifier.padding(4.dp).weight(1f),
                         onClick = actionSendBroadcast(
+                            context,
                             NetworkModeBroadcastReceiver.getIntent(context, NetworkModeBroadcastReceiver.ACTION_NR_LTE)
                         )
                     )
