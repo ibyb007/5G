@@ -8,8 +8,6 @@ import androidx.glance.GlanceModifier
 import androidx.glance.GlanceTheme
 import androidx.glance.action.actionSendBroadcast
 import androidx.glance.appwidget.GlanceAppWidget
-import androidx.glance.appwidget.components.Scaffold
-import androidx.glance.appwidget.components.TitleBar
 import androidx.glance.appwidget.provideContent
 import androidx.glance.layout.Alignment
 import androidx.glance.layout.Column
@@ -24,32 +22,28 @@ class NetworkModeWidget : GlanceAppWidget() {
     override suspend fun provideGlance(context: Context, id: GlanceId) {
         provideContent {
             GlanceTheme {
-                Scaffold(
-                    titleBar = { TitleBar(title = "5G Mode") }
+                Column(
+                    modifier = GlanceModifier.fillMaxSize().padding(16.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    Column(
-                        modifier = GlanceModifier.fillMaxSize().padding(12.dp),
-                        verticalAlignment = Alignment.CenterVertically,
+                    Text("5G Mode", modifier = GlanceModifier.padding(bottom = 12.dp))
+
+                    Row(
+                        modifier = GlanceModifier.fillMaxWidth(),
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
-                        Text("Quick Switch", modifier = GlanceModifier.padding(bottom = 8.dp))
+                        androidx.glance.Button(
+                            text = "NR Only",
+                            modifier = GlanceModifier.defaultWeight().padding(4.dp),
+                            onClick = actionSendBroadcast(NetworkModeBroadcastReceiver.getIntent(context, NetworkModeBroadcastReceiver.ACTION_NR_ONLY))
+                        )
 
-                        Row(
-                            modifier = GlanceModifier.fillMaxWidth(),
-                            horizontalAlignment = Alignment.CenterHorizontally
-                        ) {
-                            androidx.glance.Button(
-                                text = "NR Only",
-                                modifier = GlanceModifier.defaultWeight().padding(4.dp),
-                                onClick = actionSendBroadcast(NetworkModeBroadcastReceiver.getIntent(context, NetworkModeBroadcastReceiver.ACTION_NR_ONLY))
-                            )
-
-                            androidx.glance.Button(
-                                text = "NR/LTE",
-                                modifier = GlanceModifier.defaultWeight().padding(4.dp),
-                                onClick = actionSendBroadcast(NetworkModeBroadcastReceiver.getIntent(context, NetworkModeBroadcastReceiver.ACTION_NR_LTE))
-                            )
-                        }
+                        androidx.glance.Button(
+                            text = "NR/LTE",
+                            modifier = GlanceModifier.defaultWeight().padding(4.dp),
+                            onClick = actionSendBroadcast(NetworkModeBroadcastReceiver.getIntent(context, NetworkModeBroadcastReceiver.ACTION_NR_LTE))
+                        )
                     }
                 }
             }
