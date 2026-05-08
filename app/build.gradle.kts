@@ -1,7 +1,3 @@
-import java.util.Properties
-import java.io.FileInputStream
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget
-
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -11,33 +7,14 @@ plugins {
 
 android {
     namespace = "com.openappslabs.fiveg"
-    compileSdk {
-        version = release(36)
-    }
-
-    signingConfigs {
-        create("release") {
-            val localPropertiesFile = rootProject.file("local.properties")
-            if (localPropertiesFile.exists()) {
-                val properties = Properties()
-                properties.load(FileInputStream(localPropertiesFile))
-                val keyPath = properties.getProperty("storeFile")
-                if (keyPath != null) {
-                    storeFile = file(keyPath)
-                    storePassword = properties.getProperty("FIVEG_KEYSTORE_PASSWORD")
-                    keyAlias = properties.getProperty("FIVEG_KEY_ALIAS")
-                    keyPassword = properties.getProperty("FIVEG_KEY_PASSWORD")
-                }
-            }
-        }
-    }
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.openappslabs.fiveg"
         minSdk = 29
         targetSdk = 36
-        versionCode = 4
-        versionName = "1.2.0"
+        versionCode = 5
+        versionName = "1.3.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -45,35 +22,17 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = true
-            isShrinkResources = true
-            isCrunchPngs = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-            if (rootProject.file("local.properties").exists()) {
-                signingConfig = signingConfigs.getByName("release")
-            }
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
+
     buildFeatures {
         compose = true
-        buildConfig = true
-    }
-
-    dependenciesInfo {
-        includeInApk = false
-        includeInBundle = false
-    }
-}
-
-kotlin {
-    compilerOptions {
-        jvmTarget.set(JvmTarget.JVM_17)
     }
 }
 
@@ -86,21 +45,15 @@ dependencies {
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.compose.ui.test.junit4)
-    debugImplementation(libs.androidx.compose.ui.tooling)
-    debugImplementation(libs.androidx.compose.ui.test.manifest)
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.kotlinx.serialization.json)
 
-    // Glance Widget Support
+    // Glance Widgets
     implementation("androidx.glance:glance-appwidget:1.1.1")
     implementation("androidx.glance:glance-material3:1.1.1")
 
-    // Navigation
-    implementation(libs.androidx.navigation.compose)
-
-    // Serialization
-    implementation(libs.kotlinx.serialization.json)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+    debugImplementation(libs.androidx.compose.ui.tooling)
 }
