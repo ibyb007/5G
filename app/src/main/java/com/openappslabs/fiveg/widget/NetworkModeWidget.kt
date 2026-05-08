@@ -5,7 +5,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.dp
 import androidx.glance.GlanceId
 import androidx.glance.GlanceModifier
-import androidx.glance.action.actionSendBroadcast
 import androidx.glance.appwidget.GlanceAppWidget
 import androidx.glance.appwidget.provideContent
 import androidx.glance.layout.Alignment
@@ -14,8 +13,8 @@ import androidx.glance.layout.Row
 import androidx.glance.layout.fillMaxSize
 import androidx.glance.layout.fillMaxWidth
 import androidx.glance.layout.padding
-import androidx.glance.layout.weight
 import androidx.glance.text.Text
+import androidx.glance.Button
 
 class NetworkModeWidget : GlanceAppWidget() {
 
@@ -32,22 +31,22 @@ class NetworkModeWidget : GlanceAppWidget() {
                     modifier = GlanceModifier.fillMaxWidth(),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    androidx.glance.Button(
+                    Button(
                         text = "NR Only",
-                        modifier = GlanceModifier.padding(4.dp).weight(1f),
-                        onClick = actionSendBroadcast(
-                            context,
-                            NetworkModeBroadcastReceiver.getIntent(context, NetworkModeBroadcastReceiver.ACTION_NR_ONLY)
-                        )
+                        modifier = GlanceModifier.padding(4.dp),
+                        onClick = {
+                            val intent = NetworkModeBroadcastReceiver.getIntent(context, NetworkModeBroadcastReceiver.ACTION_NR_ONLY)
+                            context.sendBroadcast(intent)
+                        }
                     )
 
-                    androidx.glance.Button(
+                    Button(
                         text = "NR/LTE",
-                        modifier = GlanceModifier.padding(4.dp).weight(1f),
-                        onClick = actionSendBroadcast(
-                            context,
-                            NetworkModeBroadcastReceiver.getIntent(context, NetworkModeBroadcastReceiver.ACTION_NR_LTE)
-                        )
+                        modifier = GlanceModifier.padding(4.dp),
+                        onClick = {
+                            val intent = NetworkModeBroadcastReceiver.getIntent(context, NetworkModeBroadcastReceiver.ACTION_NR_LTE)
+                            context.sendBroadcast(intent)
+                        }
                     )
                 }
             }
