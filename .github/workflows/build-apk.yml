@@ -1,52 +1,31 @@
-package com.openappslabs.fiveg.widget
+name: Build Debug APK
 
-import android.content.Context
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.unit.dp
-import androidx.glance.GlanceId
-import androidx.glance.GlanceModifier
-import androidx.glance.GlanceTheme
-import androidx.glance.action.actionSendBroadcast
-import androidx.glance.appwidget.GlanceAppWidget
-import androidx.glance.appwidget.provideContent
-import androidx.glance.layout.Alignment
-import androidx.glance.layout.Column
-import androidx.glance.layout.Row
-import androidx.glance.layout.fillMaxSize
-import androidx.glance.layout.fillMaxWidth
-import androidx.glance.layout.padding
-import androidx.glance.text.Text
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
 
-class NetworkModeWidget : GlanceAppWidget() {
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
-    override suspend fun provideGlance(context: Context, id: GlanceId) {
-        provideContent {
-            GlanceTheme {
-                Column(
-                    modifier = GlanceModifier.fillMaxSize().padding(16.dp),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalAlignment = Alignment.CenterHorizontally
-                ) {
-                    Text("5G Mode Switcher", modifier = GlanceModifier.padding(bottom = 12.dp))
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-                    Row(
-                        modifier = GlanceModifier.fillMaxWidth(),
-                        horizontalAlignment = Alignment.CenterHorizontally
-                    ) {
-                        androidx.glance.Button(
-                            text = "NR Only",
-                            modifier = GlanceModifier.defaultWeight().padding(4.dp),
-                            onClick = actionSendBroadcast(NetworkModeBroadcastReceiver.getIntent(context, NetworkModeBroadcastReceiver.ACTION_NR_ONLY))
-                        )
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
 
-                        androidx.glance.Button(
-                            text = "NR/LTE",
-                            modifier = GlanceModifier.defaultWeight().padding(4.dp),
-                            onClick = actionSendBroadcast(NetworkModeBroadcastReceiver.getIntent(context, NetworkModeBroadcastReceiver.ACTION_NR_LTE))
-                        )
-                    }
-                }
-            }
-        }
-    }
-}
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v3
+        with:
+          cache-read-only: false
+
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
+      - name: Build Debug APK
+        run: ./gradlew assembleDebug --stacktrace
