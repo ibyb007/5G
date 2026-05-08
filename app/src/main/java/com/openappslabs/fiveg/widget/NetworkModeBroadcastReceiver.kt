@@ -4,7 +4,6 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.widget.Toast
-import com.openappslabs.fiveg.utils.RadioInfo
 
 class NetworkModeBroadcastReceiver : BroadcastReceiver() {
 
@@ -20,11 +19,16 @@ class NetworkModeBroadcastReceiver : BroadcastReceiver() {
     }
 
     override fun onReceive(context: Context, intent: Intent) {
-        when (intent.action) {
-            ACTION_NR_ONLY, ACTION_NR_LTE -> {
-                RadioInfo.openRadioInfo(context)
-                Toast.makeText(context, "Opened Radio Info • Choose your mode", Toast.LENGTH_LONG).show()
-            }
+        // Simple way: Open the hidden Radio Info settings directly
+        try {
+            val intentRadio = Intent("android.intent.action.MAIN")
+            intentRadio.setClassName("com.android.settings", "com.android.settings.RadioInfo")
+            intentRadio.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            context.startActivity(intentRadio)
+
+            Toast.makeText(context, "Opened Radio Info\nSelect NR Only or NR/LTE", Toast.LENGTH_LONG).show()
+        } catch (e: Exception) {
+            Toast.makeText(context, "Could not open Radio Info", Toast.LENGTH_LONG).show()
         }
     }
 }
