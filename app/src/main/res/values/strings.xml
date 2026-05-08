@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">5G</string>
     <string name="widget_description">5G Network Mode Switcher</string>
+    
+    <!-- Optional extra strings -->
+    <string name="open_radio_info">Open Radio Info</string>
+    <string name="nr_only">NR Only</string>
+    <string name="nr_lte">NR/LTE</string>
 </resources>
