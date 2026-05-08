@@ -51,7 +51,6 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            // Use the signing config when local.properties exists
             if (rootProject.file("local.properties").exists()) {
                 signingConfig = signingConfigs.getByName("release")
             }
@@ -63,7 +62,7 @@ android {
     }
     buildFeatures {
         compose = true
-        buildConfig  = true
+        buildConfig = true
     }
 
     dependenciesInfo {
@@ -94,6 +93,8 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+
+    // Glance Widget Support
     implementation("androidx.glance:glance-appwidget:1.1.1")
     implementation("androidx.glance:glance-material3:1.1.1")
 
