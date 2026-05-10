@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
-        android:enableOnBackInvokedCallback="true"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -11,27 +9,30 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme._5G">
+        android:theme="@style/Theme._5G"
+        android:enableOnBackInvokedCallback="true">
 
-        <!-- Widget Broadcast Receiver -->
-        <receiver
-            android:name=".widget.NetworkModeBroadcastReceiver"
-            android:exported="false" />
-
-        <!-- Widget Provider -->
-        <receiver
-            android:name=".widget.NetworkModeWidgetReceiver"
-            android:exported="false"
-            android:label="5G Mode Widget">
-            
+        <!-- NR Only Shortcut -->
+        <activity
+            android:name=".ShortcutNROnly"
+            android:label="NR Only"
+            android:exported="true"
+            android:icon="@mipmap/ic_launcher">
             <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="android.intent.action.MAIN" />
             </intent-filter>
+        </activity>
 
-            <meta-data
-                android:name="android.appwidget.provider"
-                android:resource="@xml/network_mode_widget_info" />
-        </receiver>
+        <!-- NR/LTE Shortcut -->
+        <activity
+            android:name=".ShortcutNRLTE"
+            android:label="NR/LTE"
+            android:exported="true"
+            android:icon="@mipmap/ic_launcher">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
 
         <activity
             android:name=".MainActivity"
