@@ -6,4 +6,9 @@
     <string name="open_radio_info">Open Radio Info</string>
     <string name="nr_only">NR Only</string>
     <string name="nr_lte">NR/LTE</string>
+
+    <!-- Shortcut strings -->
+    <string name="shortcut_nr_only_long">Switch to NR Only mode</string>
+    <string name="shortcut_nr_lte_long">Switch to NR/LTE mode</string>
+    <string name="shortcut_open_settings_long">Open 5G Network Settings</string>
 </resources>
