@@ -1,10 +1,12 @@
 package com.openappslabs.fiveg.widget
 
 import android.content.Context
+import android.content.Intent
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.dp
 import androidx.glance.GlanceId
 import androidx.glance.GlanceModifier
+import androidx.glance.action.actionStartActivity
 import androidx.glance.appwidget.GlanceAppWidget
 import androidx.glance.appwidget.provideContent
 import androidx.glance.layout.Alignment
@@ -13,8 +15,8 @@ import androidx.glance.layout.Row
 import androidx.glance.layout.fillMaxSize
 import androidx.glance.layout.fillMaxWidth
 import androidx.glance.layout.padding
+import androidx.glance.layout.weight
 import androidx.glance.text.Text
-import androidx.glance.Button
 
 class NetworkModeWidget : GlanceAppWidget() {
 
@@ -31,22 +33,26 @@ class NetworkModeWidget : GlanceAppWidget() {
                     modifier = GlanceModifier.fillMaxWidth(),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    Button(
+                    androidx.glance.Button(
                         text = "NR Only",
-                        modifier = GlanceModifier.padding(4.dp),
-                        onClick = {
-                            val intent = NetworkModeBroadcastReceiver.getIntent(context, NetworkModeBroadcastReceiver.ACTION_NR_ONLY)
-                            context.sendBroadcast(intent)
-                        }
+                        modifier = GlanceModifier.padding(4.dp).weight(1f),
+                        onClick = actionStartActivity(
+                            Intent().apply {
+                                setClassName("com.android.settings", "com.android.settings.RadioInfo")
+                                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                            }
+                        )
                     )
 
-                    Button(
+                    androidx.glance.Button(
                         text = "NR/LTE",
-                        modifier = GlanceModifier.padding(4.dp),
-                        onClick = {
-                            val intent = NetworkModeBroadcastReceiver.getIntent(context, NetworkModeBroadcastReceiver.ACTION_NR_LTE)
-                            context.sendBroadcast(intent)
-                        }
+                        modifier = GlanceModifier.padding(4.dp).weight(1f),
+                        onClick = actionStartActivity(
+                            Intent().apply {
+                                setClassName("com.android.settings", "com.android.settings.RadioInfo")
+                                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                            }
+                        )
                     )
                 }
             }
