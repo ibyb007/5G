@@ -33,11 +33,6 @@ android {
 
     buildFeatures {
         compose = true
-        buildConfig = true
-    }
-
-    kotlinOptions {
-        jvmTarget = "17"
     }
 }
 
@@ -52,10 +47,6 @@ dependencies {
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.kotlinx.serialization.json)
-
-    // Glance Widgets
-    implementation("androidx.glance:glance-appwidget:1.1.1")
-    implementation("androidx.glance:glance-material3:1.1.1")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
