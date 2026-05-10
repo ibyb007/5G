@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:shortcutId="nr_only_shortcut"
+        android:enabled="true"
+        android:icon="@mipmap/ic_launcher"
+        android:shortcutShortLabel="@string/nr_only"
+        android:shortcutLongLabel="@string/shortcut_nr_only_long">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="com.openappslabs.fiveg"
+            android:targetClass="com.openappslabs.fiveg.ShortcutNROnly" />
+        <categories android:name="android.intent.category.DEFAULT" />
+    </shortcut>
+
+    <shortcut
+        android:shortcutId="nr_lte_shortcut"
+        android:enabled="true"
+        android:icon="@mipmap/ic_launcher"
+        android:shortcutShortLabel="@string/nr_lte"
+        android:shortcutLongLabel="@string/shortcut_nr_lte_long">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="com.openappslabs.fiveg"
+            android:targetClass="com.openappslabs.fiveg.ShortcutNRLTE" />
+        <categories android:name="android.intent.category.DEFAULT" />
+    </shortcut>
+
+    <shortcut
+        android:shortcutId="open_settings_shortcut"
+        android:enabled="true"
+        android:icon="@mipmap/ic_launcher"
+        android:shortcutShortLabel="@string/open_radio_info"
+        android:shortcutLongLabel="@string/shortcut_open_settings_long">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="com.openappslabs.fiveg"
+            android:targetClass="com.openappslabs.fiveg.MainActivity" />
+        <categories android:name="android.intent.category.DEFAULT" />
+    </shortcut>
+</shortcuts>
